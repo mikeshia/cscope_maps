@@ -35,7 +35,7 @@ if has("cscope")
 
     " check cscope for definition of a symbol before checking ctags: set to 1
     " if you want the reverse search order.
-    set csto=0
+    set csto=1
 
     " add any cscope database in current directory
     if filereadable("cscope.out")
@@ -88,15 +88,14 @@ if has("cscope")
     " go back to where you were before the search.  
     "
 
-    nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>	
-    nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-    nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>	
-
+nmap <leader>s :cs find s <C-R>=expand("<cword>")<CR><CR>:copen<CR>   
+nmap <leader>g :cs find g <C-R>=expand("<cword>")<CR><CR>:copen<CR>   
+nmap <leader>c :cs find c <C-R>=expand("<cword>")<CR><CR>:copen<CR>   
+nmap <leader>t :cs find t <C-R>=expand("<cword>")<CR><CR>:copen<CR>   
+nmap <leader>e :cs find e <C-R>=expand("<cword>")<CR><CR>:copen<CR>   
+nmap <leader>f :cs find f <C-R>=expand("<cfile>")<CR><CR>:copen<CR>   
+nmap <leader>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>:copen<CR> 
+nmap <leader>d :cs find d <C-R>=expand("<cword>")<CR><CR>:copen<CR> 
 
     " Using 'CTRL-spacebar' (intepreted as CTRL-@ by vim) then a search type
     " makes the vim window split horizontally, with search result displayed in
