@@ -41,8 +41,25 @@ if has("cscope")
     if filereadable("cscope.out")
         cs add cscope.out  
     " else add the database pointed to by environment variable 
-    elseif $CSCOPE_DB != ""
-        cs add $CSCOPE_DB
+    else
+        if $CSCOPE_DB != ""
+            cs add $CSCOPE_DB
+        endif
+        if $CSCOPE_DB_1 != ""
+            cs add $CSCOPE_DB_1
+        endif
+        if $CSCOPE_DB_2 != ""
+            cs add $CSCOPE_DB_2
+        endif
+        if $CSCOPE_DB_3 != ""
+            cs add $CSCOPE_DB_3
+        endif
+        if $CSCOPE_DB_4 != ""
+            cs add $CSCOPE_DB_4
+        endif
+        if $CSCOPE_DB_5 != ""
+            cs add $CSCOPE_DB_5
+        endif
     endif
 
     " show msg when any other cscope db added
